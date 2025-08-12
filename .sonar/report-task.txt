@@ -1,0 +1,6 @@
+projectKey=sistemas-csgd_sou-ufpr_sou-ufpr-web_577bb478-55a4-4844-894b-95180afc227e
+serverUrl=https://restrito.ufpr.br/sonarqube
+serverVersion=25.2.0.102705
+dashboardUrl=https://restrito.ufpr.br/sonarqube/dashboard?id=sistemas-csgd_sou-ufpr_sou-ufpr-web_577bb478-55a4-4844-894b-95180afc227e
+ceTaskId=404b312d-1eff-4f23-8612-9095b66cedba
+ceTaskUrl=https://restrito.ufpr.br/sonarqube/api/ce/task?id=404b312d-1eff-4f23-8612-9095b66cedba

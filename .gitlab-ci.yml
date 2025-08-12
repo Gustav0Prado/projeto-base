@@ -1,0 +1,101 @@
+image: node:18
+
+variables:
+  SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+  GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+  DOCKER_REGISTRY: registry.ufpr.br
+  IMAGE_NAME: sistemas-csgd/sou-ufpr/sou-ufpr-web
+  KUBERNETES_NAMESPACE: csgd
+
+stages:
+  - install
+  - build
+  - build-sonar
+  - setup-env-deploy
+  - build-image
+  - deploy-container
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+install_dependencies:
+  stage: install
+  tags:
+    - devops
+  script:
+    - npm install
+
+build_app:
+  stage: build
+  tags:
+    - devops
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - dist
+
+sonar_analysis:
+  image: sonarsource/sonar-scanner-cli:11
+  stage: build-sonar
+  tags:
+    - devops
+  variables:
+    SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"
+    GIT_DEPTH: "0"
+  cache:
+    key: "sonar-cache-$CI_COMMIT_REF_SLUG"
+    paths:
+      - "${SONAR_USER_HOME}/cache"
+  script: 
+    - sonar-scanner -Dsonar.host.url="${SONAR_HOST_URL}" -Dsonar.login="${SONAR_TOKEN}" -Dsonar.projectKey="${SONAR_PROJECT_KEY}"
+  allow_failure: true
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - if: $CI_COMMIT_BRANCH == 'master'
+    - if: $CI_COMMIT_BRANCH == 'main'
+    - if: $CI_COMMIT_BRANCH == 'develop'
+
+setup-env-deploy:
+  stage: setup-env-deploy
+  image: alpine:latest
+  script:
+    - echo "Setting timestamp..."
+    - now=$(date "+%Y%m%d-%H%M%S")
+    - echo "now=$now" > build_vars.env # Store the variable in a file for later jobs
+  allow_failure: false
+  tags: [ devops ]
+  artifacts:
+    reports:
+      dotenv: build_vars.env # Share the environment variable with subsequent jobs
+
+build-image:
+  stage: build-image
+  image: 
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  script:
+    - echo "Criando contêiner com Kaniko"
+    - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --destination $DOCKER_REGISTRY/$IMAGE_NAME:sou-ufpr-web-$now
+  allow_failure: false
+  tags: [ devops ]
+  variables:
+    DOCKER_CONFIG: "/kaniko/.docker/"
+    KANIKO_PRIVILEGED: "true"
+  services:
+    - docker:dind
+
+deploy-container:
+  stage: deploy-container
+  image:
+    name: lachlanevenson/k8s-kubectl:latest
+    entrypoint: [""]
+  script:
+    - echo "Fazendo push do contêiner"
+    - export KUBECONFIG=$KUBECONFIG_FILE
+    - kubectl -n $KUBERNETES_NAMESPACE set image deployment/sou-ufpr-web sou-ufpr-web=$DOCKER_REGISTRY/$IMAGE_NAME:sou-ufpr-web-$now
+    - echo "Implantação concluída"
+  allow_failure: false
+  tags: [ devops ]
