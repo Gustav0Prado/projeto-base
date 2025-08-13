@@ -1,17 +1,17 @@
 <template>
-  <div class="flex flex-col min-h-screen items-center">
-    <main class="flex-grow">
+  <main>
       <!-- Router View -->
-      <!-- <router-view class="w-full max-w-4xl px-4" /> -->
+      <router-view class="w-full" />
       <!-- PWA Badge -->
       <PWABadge class="mt-8" />
-    </main>
-    <Footer />
-  </div>
+  </main>
+  <BackToTopBtn />
+  <Footer />
 </template>
 
 <script setup lang="ts">
 import PWABadge from './components/PWABadge.vue';
+import BackToTopBtn from './components/sections/layout/BackToTopBtn.vue';
 import Footer from './components/sections/layout/Footer.vue';
 </script>
 
