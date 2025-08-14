@@ -12,7 +12,10 @@
       redirecionamento de telas dentro do Vuejs
     </p>
   </div> -->
+  <Gallery />
 </template>
 
 <script setup lang="ts">
+import Gallery from '../components/sections/home/Gallery.vue';
+
 </script>
