@@ -8,11 +8,12 @@
                 aliquam dolor eius.
             </span>
         </div>
-        <div class="flex flex-row flex-wrap justify-center gap-40 py-10">
-            <div v-for="img in images" class="relative inline-block video-bg-image">
-                <img :src="img.src" class="images rounded-2xl transition duration-300">
+        <div class="flex flex-row flex-wrap justify-center gap-5 py-10">
+            <div v-for="img in images" class="relative inline-block video-bg-image group">
+                <img :src="img.src" class="images rounded-2xl transition duration-300 group-hover:brightness-50">
 
-                <a href="https://youtube.com" target="_blank" class="absolute inset-0 flex items-center justify-center">
+                <a href="https://youtube.com" target="_blank"
+                    class="absolute top-30 left-35 transition-transform duration-300 group-hover:scale-125">
                     <img src="/src/assets/video-icon.png" alt="Video Icon" width="64" height="64">
                 </a>
             </div>
@@ -33,26 +34,13 @@ const images = [
     {
         src: "/src/assets/image3.jpg",
         alt: "Terceira imagem"
-    }
+    },
 ]
 </script>
 
 <style scoped>
-/* Efeito de brilho no hover do container */
-.video-bg-image:hover {
-    filter: brightness(70%);
-}
-
-.video-bg-image a {
-    transition: transform 0.3s ease;
-}
-
-.video-bg-image a:hover {
-    transform: scale(1.2);
-}
-
 .images {
-    width: 250px;
-    height: 200px;
+    width: 350px;
+    height: 300px;
 }
 </style>
