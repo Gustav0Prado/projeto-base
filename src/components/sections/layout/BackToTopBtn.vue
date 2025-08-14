@@ -15,8 +15,8 @@ const goToTop = () => {
 }
 
 const checkIfNearBottom = () => {
-    const scrollPos = window.scrollY + window.innerHeight
-    const halfPage = document.documentElement.scrollHeight / 2
+    const scrollPos = window.scrollY
+    const halfPage = document.documentElement.scrollHeight / 3
     showButton.value = (scrollPos > halfPage)
 }
 
