@@ -13,7 +13,7 @@
                 <img :src="img.src" class="images rounded-2xl transition duration-300 group-hover:brightness-50">
 
                 <a href="https://youtube.com" target="_blank"
-                    class="absolute top-30 left-35 transition-transform duration-300 group-hover:scale-125">
+                    class="absolute top-22 left-35 transition-transform duration-300 group-hover:scale-125">
                     <img src="/src/assets/video-icon.png" alt="Video Icon" width="64" height="64">
                 </a>
             </div>
@@ -41,6 +41,6 @@ const images = [
 <style scoped>
 .images {
     width: 350px;
-    height: 300px;
+    height: 250px;
 }
 </style>
