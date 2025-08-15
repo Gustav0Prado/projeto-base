@@ -1,5 +1,5 @@
 <template>
-    <nav class="flex flex-row justify-between py-5 px-10 bg-black">
+    <nav class="absolute w-full flex flex-row justify-between py-5 px-10 bg-transparent">
         <a class="text-xl text-white font-bold" href="/"> GREATNESS. </a>
 
         <!-- Lista de items em telas grandes -->
