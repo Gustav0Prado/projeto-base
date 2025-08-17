@@ -45,7 +45,7 @@ const links = [
         },
         {
             name: "Contact",
-            link: "/"
+            link: "/contact"
         },
         {
             name: "Terms",
@@ -89,7 +89,7 @@ const links = [
         },
         {
             name: "Contact",
-            link: "/"
+            link: "/contact"
         },
         {
             name: "Terms",
@@ -111,7 +111,7 @@ const links = [
         },
         {
             name: "Contact",
-            link: "/"
+            link: "/contact"
         },
         {
             name: "Terms",
@@ -133,7 +133,7 @@ const links = [
         },
         {
             name: "Contact",
-            link: "/"
+            link: "/contact"
         },
         {
             name: "Terms",
@@ -155,7 +155,7 @@ const links = [
         },
         {
             name: "Contact",
-            link: "/"
+            link: "/contact"
         },
         {
             name: "Terms",
