@@ -1,12 +1,12 @@
 <template>
     <footer class="flex flex-col flex-wrap gap-20 py-20 items-center ml-15 -mr-1.5">
-        <div class="w-full max-w-6xl flex flex-row flex-wrap sm:gap-35 gap-x-35 gap-y-10">
+        <div class="w-full max-w-6xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 sm:gap-35 gap-y-10">
             <div v-for="(column, index) in links" :key="index" class="flex flex-col gap-2 sm:w-auto sm:items-start">
                 <a v-for="(link, subindex) in column" :key="subindex" :href="link.link" class="hover:underline">
                     {{ link.name }} </a>
             </div>
         </div>
-        <div class=" w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class=" w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 gap-4 -ml-15 sm:ml-0">
             <div class="font-thin text-gray-600 md:text-left text-center">
                 © 2016 Free HTML5. All Rights Reserved. <br>
                 Designed by
@@ -29,6 +29,7 @@
                 </a>
             </div>
         </div>
+        <div class="py-5"></div>
     </footer>
 </template>
 

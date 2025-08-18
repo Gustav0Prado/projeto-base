@@ -3,7 +3,7 @@
         <a class="text-xl text-white font-bold" href="/"> GREATNESS. </a>
 
         <!-- Lista de items em telas grandes -->
-        <ul id="navbar_right" class="flex flex-row gap-10 text-white">
+        <ul id="navbar_right" class="hidden md:flex flex-row gap-10 text-white">
             <li v-for="link in links">
                 <!-- Se link é o atual, deixa com opacidade normal -->
                 <div v-if="link.link == active">
@@ -45,7 +45,7 @@
         </ul>
 
         <!-- Menu hamburguer em telas pequenas controlado por uma var reativa -->
-        <div v-show="hamburguerState" id="ham_menu" class="hover:cursor-pointer" @click="showSidebar">
+        <div v-show="hamburguerState" id="ham_menu" class="block md:hidden hover:cursor-pointer" @click="showSidebar">
             <img src="/src/assets/hamburger.png" class="w-8">
         </div>
 
@@ -55,7 +55,7 @@
 
         <!-- Sidebar ao clicar no hamburguer guiada por uma var reativa -->
         <transition name="slide">
-            <div v-show="sidebarState" id="sidebar"
+            <div v-if="sidebarState" id="sidebar"
                 class="flex flex-col items-end px-8 py-5 bg-black fixed right-0 top-0 h-full w-60 z-1"
                 @click="showHamburguer">
 
@@ -70,7 +70,7 @@
 
                             <!-- Sublink list -->
                             <transition name="dropdown">
-                                <ul v-show="link.sublinks && itemSelected == link.name" class="px-5">
+                                <ul v-if="link.sublinks && itemSelected == link.name" class="px-5">
                                     <li v-for="subl in link.sublinks">
                                         <a :href="subl.sublink"
                                             class="opacity-40 hover:opacity-100 transition-opacity duration-500">
@@ -204,23 +204,5 @@ function showHamburguer() {
     max-height: 500px;
     /* valor alto suficiente para o conteúdo */
     opacity: 1;
-}
-
-@media screen and (min-width: 0px) and (max-width:800px) {
-    #navbar_right {
-        display: none;
-    }
-}
-
-@media screen and (min-width: 800px) and (max-width:1920px) {
-    #ham_menu {
-        display: none;
-    }
-}
-
-@media screen and (min-width: 800px) and (max-width:1920px) {
-    #sidebar {
-        display: none;
-    }
 }
 </style>
