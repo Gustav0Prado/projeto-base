@@ -10,6 +10,7 @@
     "start": "vite preview --host"
   },
   "dependencies": {
+    "@mdi/font": "^7.4.47",
     "@tailwindcss/vite": "^4.0.6",
     "pinia": "^3.0.1",
     "tailwindcss": "^4.0.6",
