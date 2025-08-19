@@ -1,10 +1,10 @@
 <template>
   <Navbar />
-  
+
   <main>
     <!-- Router View -->
     <router-view class="w-full" />
-  
+
     <!-- PWA Badge -->
     <PWABadge class="mt-8" />
   </main>

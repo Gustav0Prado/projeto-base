@@ -21,21 +21,21 @@
 <script setup lang="ts">
 const testimonials = [
     {
-        icon: "/src/assets/person_1.jpg",
+        icon: "assets/person_1.jpg",
         source: "JEAN DOE, VIA",
         sourceName: "TWITTER",
         sourceLink: "http://x.com",
         text: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."
     },
     {
-        icon: "/src/assets/person_2.jpg",
+        icon: "assets/person_2.jpg",
         source: "JOHN DOE, VIA",
         sourceName: "TWITTER",
         sourceLink: "http://x.com",
         text: "Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."
     },
     {
-        icon: "/src/assets/person_3.jpg",
+        icon: "assets/person_3.jpg",
         source: "JOHN DOE, VIA",
         sourceName: "TWITTER",
         sourceLink: "http://x.com",

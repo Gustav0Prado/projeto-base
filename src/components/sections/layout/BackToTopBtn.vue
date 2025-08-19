@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img src="/src/assets/up-arrow-button.png" class="w-12 fixed cursor-pointer right-5 bottom-5" @click="goToTop"
+        <img :src="'/assets/up-arrow-button.png'" class="w-12 fixed cursor-pointer right-5 bottom-5" @click="goToTop"
             v-show="showButton">
     </div>
 </template>
