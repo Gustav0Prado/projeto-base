@@ -1,11 +1,11 @@
 <template>
     <div class="banner flex flex-col items-center py-70 gap-5 h-100 w-full">
-        <div class="text-white text-7xl font-thin"> {{ props.title }} </div>
+        <div class="text-white text-7xl font-thin text-center"> {{ props.title }} </div>
     </div>
 </template>
 
 <script setup lang="ts">
-    const props = defineProps(['title'])
+const props = defineProps(['title'])
 </script>
 
 <style scoped>
