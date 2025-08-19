@@ -14,7 +14,7 @@
 
                 <a href="https://youtube.com" target="_blank"
                     class="absolute top-22 left-35 transition-transform duration-300 group-hover:scale-125">
-                    <img src="/src/assets/video-icon.png" alt="Video Icon" width="64" height="64">
+                    <img src="/assets/video-icon.png" alt="Video Icon" width="64" height="64">
                 </a>
             </div>
         </div>
@@ -24,15 +24,15 @@
 <script setup lang="ts">
 const images = [
     {
-        src: "/src/assets/image1.jpg",
+        src: "assets/image1.jpg",
         alt: "Primeira imagem"
     },
     {
-        src: "/src/assets/image2.jpg",
+        src: "assets/image2.jpg",
         alt: "Segunda imagem"
     },
     {
-        src: "/src/assets/image3.jpg",
+        src: "assets/image3.jpg",
         alt: "Terceira imagem"
     },
 ]

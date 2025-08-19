@@ -16,16 +16,16 @@
             </div>
             <div class="flex flex-row gap-4 md:justify-end justify-center">
                 <a href="https://twitter.com" target="_blank">
-                    <img src="/src/assets/twitter.png" alt="Twitter" width="24" height="24">
+                    <img :src="'/assets/twitter.png'" alt="Twitter" width="24" height="24">
                 </a>
                 <a href="https://facebook.com" target="_blank">
-                    <img src="/src/assets/facebook.png" alt="facebook" width="24" height="24">
+                    <img :src="'/assets/facebook.png'" alt="facebook" width="24" height="24">
                 </a>
                 <a href="https://linkedin.com" target="_blank">
-                    <img src="/src/assets/linkedin.png" alt="linkedin" width="24" height="24">
+                    <img src="/assets/linkedin.png" alt="linkedin" width="24" height="24">
                 </a>
                 <a href="https://twitter.com" target="_blank">
-                    <img src="/src/assets/twitter.png" alt="Twitter" width="24" height="24">
+                    <img src="/assets/twitter.png" alt="Twitter" width="24" height="24">
                 </a>
             </div>
         </div>

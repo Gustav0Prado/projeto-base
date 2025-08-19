@@ -16,7 +16,7 @@
 
 <style scoped>
 .banner {
-    background-image: url('/src/assets/banner.png');
+    background-image: url('/assets/banner.png');
     background-size: cover;
 }
 </style>

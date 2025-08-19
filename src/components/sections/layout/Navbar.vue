@@ -46,7 +46,7 @@
 
         <!-- Menu hamburguer em telas pequenas controlado por uma var reativa -->
         <div v-show="hamburguerState" id="ham_menu" class="block md:hidden hover:cursor-pointer" @click="showSidebar">
-            <img src="/src/assets/hamburger.png" class="w-8">
+            <img src="/assets/hamburger.png" class="w-8">
         </div>
 
         <!-- Overlay da sidebar -->
@@ -59,7 +59,7 @@
                 class="flex flex-col items-end px-8 py-5 bg-black fixed right-0 top-0 h-full w-60 z-1"
                 @click="showHamburguer">
 
-                <img src="/src/assets/sidebar-close.png" class="w-8 hover:cursor-pointer">
+                <img src="/assets/sidebar-close.png" class="w-8 hover:cursor-pointer">
 
                 <ul class="text-white w-full">
                     <li v-for="link in links">
