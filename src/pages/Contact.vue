@@ -1,35 +1,35 @@
 <template>
     <MiniBanner title="GET IN CONTACT" />
     <div class="flex flex-row flex-wrap py-20 justify-left sm:justify-center gap-10">
-        <div class="flex flex-col">
+        <div class="flex flex-col grow min-w-0">
             <h2 class="font-semibold text-2xl px-2">Get In Touch</h2>
-            <form class="flex flex-col flex-wrap gap-5 px-2">
-                <div class="flex flex-row flex-wrap sm:gap-10">
-                    <div class="flex flex-col grow">
+            <form class="flex flex-col gap-5 px-2">
+                <div class="flex flex-row flex-wrap gap-10">
+                    <div class="flex flex-col grow min-w-0">
                         <label class="font-thin py-3">First name</label>
                         <input type="text" placeholder="Your first name"
                             class="border-2 border-green-700 rounded-md p-4"></input>
                     </div>
-                    <div class="flex flex-col grow">
+                    <div class="flex flex-col grow min-w-0">
                         <label class="font-thin py-3">Last name</label>
                         <input type="text" placeholder="Your last name"
                             class="border-2 border-green-700 rounded-md p-4"></input>
                     </div>
                 </div>
-                <div class="flex flex-col flex-wrap">
+                <div class="flex flex-col w-[100%] min-w-[0px]">
                     <label class="font-thin py-3">Email</label>
                     <input type="email" placeholder="Your email address"
                         class="border-2 border-green-700 rounded-md p-4"></input>
                 </div>
-                <div class="flex flex-col flex-wrap">
+                <div class="flex flex-col">
                     <label class="font-thin py-3">Subject</label>
                     <input type="text" placeholder="Your subject of this message"
                         class="border-2 border-green-700 rounded-md p-4"></input>
                 </div>
-                <div class="flex flex-col flex-wrap">
+                <div class="flex flex-col">
                     <label class="font-thin py-3">Message</label>
                     <textarea type="text" placeholder="Write us something"
-                        class="border-2 border-green-700 rounded-md p-4" cols="30" rows="10"></textarea>
+                        class="border-2 border-green-700 rounded-md p-4"></textarea>
                 </div>
                 <button type="submit" class=" bg-green-600 text-white rounded-md p-3 cursor-pointer w-40">
                     Send Message
