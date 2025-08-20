@@ -1,6 +1,6 @@
 <template>
     <MiniBanner title="GET IN CONTACT" />
-    <div class="flex flex-row flex-wrap py-20 justify-left sm:justify-center gap-10">
+    <div class="flex flex-row flex-wrap py-20 md:px-40 justify-left sm:justify-center gap-10">
         <div class="flex flex-col grow min-w-0">
             <h2 class="font-semibold text-2xl px-2">Get In Touch</h2>
             <form class="flex flex-col gap-5 px-2">
